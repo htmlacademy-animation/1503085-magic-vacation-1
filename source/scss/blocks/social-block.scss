@@ -3,8 +3,25 @@
 
   &:hover {
     .social-block__list {
-      opacity: 1;
       pointer-events: auto;
+
+      li {
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: 230ms;
+
+        &:nth-child(1) {
+          transition-delay: 60ms;
+        }
+
+        &:nth-child(2) {
+          transition-delay: 120ms;
+        }
+
+        &:nth-child(3) {
+          transition-delay: 180ms;
+        }
+      }
     }
   }
 }
@@ -17,6 +34,8 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: color .3s;
+
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -52,6 +71,11 @@
       width: 112.5%;
       height: 112.5%;
     }
+
+    .social-block__link {
+      opacity: 1;
+    }
+
   }
 
   &:focus {
@@ -62,15 +86,22 @@
       border-color: $c-purple;
     }
 
-    & + .social-block__list {
-      opacity: 1;
+    &+.social-block__list {
       pointer-events: auto;
+    }
+
+    .social-block__link {
+      opacity: 1;
     }
   }
 
   &:active,
   &:active:focus {
     color: $c-light;
+
+    .social-block__link {
+      opacity: 1;
+    }
 
     &::before {
       width: 100%;
@@ -87,8 +118,8 @@
   top: 100%;
   right: 0;
   margin-top: 1.5rem;
-  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.3s ease;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -128,23 +159,23 @@
   }
 
   &:hover {
-    opacity: 1;
     pointer-events: auto;
   }
 
   &:focus-within {
-    opacity: 1;
     pointer-events: auto;
   }
 
   .social-block--active & {
-    opacity: 1;
     pointer-events: auto;
   }
+
 
   li {
     flex: none;
     margin-bottom: 0.5rem;
+    opacity: 0;
+
 
     @media (min-width: $stop-scaling) {
       margin-bottom: 5px;
@@ -186,6 +217,8 @@
 
   &:hover {
     color: $c-purple;
+    opacity: 1;
+	transition: color .4s;
   }
 
   &:focus {
@@ -193,6 +226,7 @@
     background-color: $c-light;
     border-color: $c-purple;
     outline: none;
+	transition: color .4s;
   }
 
   &:active,
@@ -200,6 +234,7 @@
     color: $c-purple;
     background-color: $c-light;
     border-color: $c-light;
+	transition: color .4s;
   }
 
   svg {
