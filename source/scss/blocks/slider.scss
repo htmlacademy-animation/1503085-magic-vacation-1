@@ -96,6 +96,12 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  animation: enterText .3s ease-in;
+
+  @keyframes enterText {
+	  from { transform: translateX(100px)};
+	  to {transform: translateX(0)};
+  }
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;

@@ -43,6 +43,11 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  animation: enterInput 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  @keyframes enterInput {
+	  from {transform: translateX(2500px)};
+	  to {transform: translateX(0)};
+  }
 
   &:focus {
     border: 1px solid $c-purple;
