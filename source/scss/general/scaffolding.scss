@@ -63,6 +63,20 @@ body {
       overflow: hidden;
     }
   }
+  &.loaded{
+	  .page-header__logo{
+		  transform: translateX(0);
+	  }
+	  .screen__footer{
+		  transform: translateY(0);
+	  }
+	  .page-header__nav{
+		  opacity: 1;
+	  }
+	.social-block__toggler{
+		transform: scale(1);
+	}
+  }
 }
 
 a {

@@ -1,0 +1,22 @@
+@import 'variables.scss';
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(2rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+  @keyframes enterText {
+	  from { transform: translateX(10rem)};
+	  to {transform: translateX(0)};
+  }
+
+@keyframes enterInput {
+	  from {width: 0};
+	  to {width: 100%};
+  }
