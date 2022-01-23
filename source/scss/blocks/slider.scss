@@ -1,3 +1,5 @@
+// @import 'general/animations.scss';
+
 .slider {
   position: relative;
   flex-grow: 1;
@@ -39,6 +41,7 @@
   &:nth-child(even) {
     .slider__item-text {
       align-self: flex-end;
+	  animation-delay: 150ms;
 
       @media (max-width: $mobile) and (orientation: landscape) {
         align-self: flex-start;
@@ -49,6 +52,7 @@
   &:nth-child(2) {
     .slider__item-text {
       margin-top: 7.8rem;
+	  animation-delay: 200ms;
 
       @media (min-width: $stop-scaling) {
         margin-top: 78px;
@@ -97,11 +101,6 @@
   font-size: 1.8rem;
   line-height: 2rem;
   animation: enterText .3s ease-in;
-
-  @keyframes enterText {
-	  from { transform: translateX(100px)};
-	  to {transform: translateX(0)};
-  }
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;

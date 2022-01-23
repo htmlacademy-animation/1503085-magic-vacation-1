@@ -24,6 +24,18 @@
       }
     }
   }
+  &.socialBlock--active-color{
+	  .social-block__toggler{
+		   background: $c-purple;
+			color: #fff;
+	  }
+	  .social-block__toggler::before{
+		  width: 100%;
+		  height: 100%;
+		   border-color: $c-purple;
+		    // background: $c-purple;
+	  }
+	}
 }
 
 .social-block__toggler {
@@ -34,7 +46,8 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
-  transition: color .3s;
+  transform: scale(0.1);
+  transition: color .3s, background .3s, border-color .3s, transform .3s .3s;
 
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -54,6 +67,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+	transition: border-color .3s;
   }
 
   svg {
@@ -62,6 +76,7 @@
     width: 2.3rem;
     height: 2.2rem;
   }
+
 
   &:hover,
   .social-block--active & {
@@ -219,6 +234,9 @@
     color: $c-purple;
     opacity: 1;
 	transition: color .4s;
+	.social-block__toggler{
+		background: $c-purple;
+	}
   }
 
   &:focus {
