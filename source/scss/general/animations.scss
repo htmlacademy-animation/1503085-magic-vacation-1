@@ -30,16 +30,13 @@
 }
 @keyframes backgroundColorAnimation {
   from {
-    height: 1000px;
     z-index: 1;
     transform: translateY(3000px);
   }
   50% {
-    height: 1000px;
     z-index: 1;
   }
   to {
-    height: 1000px;
     z-index: 1;
     transform: translate(0);
   }

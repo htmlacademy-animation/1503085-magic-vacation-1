@@ -370,6 +370,7 @@
   width: 100%;
   background-color: $c-dark;
   &.active {
-    animation: backgroundColorAnimation 0.7s cubic-bezier(0, 0.55, 0.31, 1.02);
+    height: 100vh;
+    animation: backgroundColorAnimation 0.3s cubic-bezier(0, 0.55, 0.31, 1.02);
   }
 }
