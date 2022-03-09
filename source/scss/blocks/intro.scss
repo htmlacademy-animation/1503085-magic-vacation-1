@@ -1,4 +1,4 @@
-@import 'general/animations.scss';
+@import "general/animations.scss";
 
 .intro {
   display: flex;
@@ -34,7 +34,6 @@
   font-size: 12rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
-  transform: translateX(-1000rem);
 
   @media (min-width: $stop-scaling) {
     max-width: 990px;
