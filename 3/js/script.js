@@ -10266,14 +10266,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   window.addEventListener("load", function () {
     document.body.classList.add("loaded");
+    let menuItems = document.querySelectorAll(".js-menu-link");
+    menuItems.forEach((item) =>
+      item.addEventListener("click", checkActiveClass)
+    );
 
-    function backgroundAnimate(id, selector) {
-      if (document.querySelector(id).classList.length === 2) {
-        selector.classList.add("active");
+    function checkActiveClass(e, id) {
+      if (e.target.dataset.href === `prizes`) {
+        background.classList.add("active");
+      } else {
+        background.classList.remove("active");
       }
     }
-
-    backgroundAnimate("#prizes", background);
   });
   const background = document.querySelector(".screen--background");
 });
@@ -10457,8 +10461,12 @@ class FullPageScroll {
     this.scrollFlag = true;
     this.timeout = null;
 
-    this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
-    this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.screenElements = document.querySelectorAll(
+      `.screen:not(.screen--result)`
+    );
+    this.menuElements = document.querySelectorAll(
+      `.page-header__menu .js-menu-link`
+    );
 
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
@@ -10466,7 +10474,10 @@ class FullPageScroll {
   }
 
   init() {
-    document.addEventListener(`wheel`, lodash_throttle__WEBPACK_IMPORTED_MODULE_0___default()(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
+    document.addEventListener(
+      `wheel`,
+      lodash_throttle__WEBPACK_IMPORTED_MODULE_0___default()(this.onScrollHandler, this.THROTTLE_TIMEOUT, { trailing: true })
+    );
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
     this.onUrlHashChanged();
@@ -10491,9 +10502,14 @@ class FullPageScroll {
   }
 
   onUrlHashChanged() {
-    const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
-    this.activeScreen = (newIndex < 0) ? 0 : newIndex;
-    this.changePageDisplay();
+    const newIndex = Array.from(this.screenElements).findIndex(
+      (screen) => location.hash.slice(1) === screen.id
+    );
+    this.activeScreen = newIndex < 0 ? 0 : newIndex;
+    setTimeout(() => {
+      console.log("change");
+      this.changePageDisplay();
+    }, 300);
   }
 
   changePageDisplay() {
@@ -10514,7 +10530,9 @@ class FullPageScroll {
   }
 
   changeActiveMenuItem() {
-    const activeItem = Array.from(this.menuElements).find((item) => item.dataset.href === this.screenElements[this.activeScreen].id);
+    const activeItem = Array.from(this.menuElements).find(
+      (item) => item.dataset.href === this.screenElements[this.activeScreen].id
+    );
     if (activeItem) {
       this.menuElements.forEach((item) => item.classList.remove(`active`));
       activeItem.classList.add(`active`);
@@ -10524,10 +10542,10 @@ class FullPageScroll {
   emitChangeDisplayEvent() {
     const event = new CustomEvent(`screenChanged`, {
       detail: {
-        'screenId': this.activeScreen,
-        'screenName': this.screenElements[this.activeScreen].id,
-        'screenElement': this.screenElements[this.activeScreen]
-      }
+        screenId: this.activeScreen,
+        screenName: this.screenElements[this.activeScreen].id,
+        screenElement: this.screenElements[this.activeScreen],
+      },
     });
 
     document.body.dispatchEvent(event);
@@ -10535,7 +10553,10 @@ class FullPageScroll {
 
   reCalculateActiveScreenPosition(delta) {
     if (delta > 0) {
-      this.activeScreen = Math.min(this.screenElements.length - 1, ++this.activeScreen);
+      this.activeScreen = Math.min(
+        this.screenElements.length - 1,
+        ++this.activeScreen
+      );
     } else {
       this.activeScreen = Math.max(0, --this.activeScreen);
     }
@@ -10765,15 +10786,13 @@ __webpack_require__.r(__webpack_exports__);
   socialBlock.addEventListener(`mouseleave`, function () {
     socialBlock.classList.remove(`social-block--active`);
   });
-  const socialList = document.querySelector('.social-block__list');
-	socialList.addEventListener('mouseover', function() {
-		socialBlock.classList.add('socialBlock--active-color');
-		console.log('color')
-	});
-	socialList.addEventListener('mouseleave', function() {
-		socialBlock.classList.remove('socialBlock--active-color');
-		console.log('color')
-	});
+  const socialList = document.querySelector(".social-block__list");
+  socialList.addEventListener("mouseover", function () {
+    socialBlock.classList.add("socialBlock--active-color");
+  });
+  socialList.addEventListener("mouseleave", function () {
+    socialBlock.classList.remove("socialBlock--active-color");
+  });
 });
 
 

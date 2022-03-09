@@ -1042,16 +1042,13 @@ img {
 }
 @keyframes backgroundColorAnimation {
   from {
-    height: 1000px;
     z-index: 1;
-    transform: translateY(3000px);
+    transform: translateY(100vh);
   }
   50% {
-    height: 1000px;
     z-index: 1;
   }
   to {
-    height: 1000px;
     z-index: 1;
     transform: translate(0);
   }
@@ -1800,16 +1797,13 @@ img {
 }
 @keyframes backgroundColorAnimation {
   from {
-    height: 1000px;
     z-index: 1;
-    transform: translateY(3000px);
+    transform: translateY(100vh);
   }
   50% {
-    height: 1000px;
     z-index: 1;
   }
   to {
-    height: 1000px;
     z-index: 1;
     transform: translate(0);
   }
@@ -1852,7 +1846,6 @@ img {
   font-size: 12rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
-  transform: translateX(-1000rem);
 }
 @media (min-width: 2000px) {
   .intro__title {
@@ -3670,7 +3663,8 @@ img {
   background-color: #5f458c;
 }
 .screen--background.active {
-  animation: backgroundColorAnimation 0.7s cubic-bezier(0, 0.55, 0.31, 1.02);
+  height: 100vh;
+  animation: backgroundColorAnimation 0.3s cubic-bezier(0, 0.55, 0.31, 1.02);
 }
 
 .slider {
