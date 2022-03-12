@@ -113,7 +113,6 @@
   }
 
   .page-header--menu-opened & {
-
     &::before,
     &::after {
       top: 50%;
@@ -134,7 +133,7 @@
   display: flex;
   align-items: center;
   opacity: 0;
-  transition: opacity .8s cubic-bezier(0.18, 0.93, 0.35, 1.21) 0.3s;
+  transition: opacity 0.8s cubic-bezier(0.18, 0.93, 0.35, 1.21) 0.3s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -274,21 +273,20 @@
     &.active {
       &::after {
         display: block;
-		width: 100%;
+        width: 100%;
       }
     }
 
     &:hover,
     &:focus {
-		
       color: $c-purple;
       outline: none;
 
       &::after {
         display: block;
-		width: 100%;
+        width: 100%;
         background-color: $c-purple;
-		right: auto;
+        right: auto;
       }
     }
   }
