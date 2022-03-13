@@ -5,6 +5,7 @@
   min-height: 100vh;
   z-index: 1;
   overflow: hidden;
+
   &--hidden {
     display: none;
   }
@@ -16,6 +17,7 @@
   @media (max-width: $tablet - 1) and (orientation: landscape) {
     height: 100vh;
   }
+
   .active {
     .screen--background {
       height: 100vh;
@@ -369,6 +371,7 @@
   left: 0;
   width: 100%;
   background-color: $c-dark;
+
   &.active {
     height: 100vh;
     animation: backgroundColorAnimation 0.3s cubic-bezier(0, 0.55, 0.31, 1.02);

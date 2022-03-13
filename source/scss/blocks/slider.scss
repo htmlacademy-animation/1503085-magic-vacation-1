@@ -41,7 +41,7 @@
   &:nth-child(even) {
     .slider__item-text {
       align-self: flex-end;
-	  animation-delay: 150ms;
+      animation-delay: 150ms;
 
       @media (max-width: $mobile) and (orientation: landscape) {
         align-self: flex-start;
@@ -52,7 +52,7 @@
   &:nth-child(2) {
     .slider__item-text {
       margin-top: 7.8rem;
-	  animation-delay: 200ms;
+      animation-delay: 200ms;
 
       @media (min-width: $stop-scaling) {
         margin-top: 78px;
@@ -100,7 +100,7 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
-  animation: enterText .3s ease-in;
+  animation: enterText 0.3s ease-in;
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
